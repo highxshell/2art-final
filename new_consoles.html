@@ -66,7 +66,12 @@
                     </div>
                      <div class="card-footer">
        <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -85,7 +90,12 @@
                     </div>
                      <div class="card-footer">
           <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -105,7 +115,12 @@
                     </div>
                      <div class="card-footer">
            <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -128,7 +143,12 @@
                     </div>
                      <div class="card-footer">
            <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -146,7 +166,12 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -165,7 +190,12 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -188,7 +218,12 @@
                     </div>
                      <div class="card-footer">
           <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
         </div>
                 </div>
             </div>
@@ -208,7 +243,14 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-danger">Add to Basket</button>
+            <button class="btn btn-primary">Add to Basket</button>
+        
+            <button class="btn btn-Light" onclick="increaseLikes('console1')">
+    <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
+</button>
+
+  <span id="likeCount_console1">0</span> <span style="font-size: 12px;" id="likeText_console1">Like</span>
+
         </div>
                 </div>
             </div>
@@ -238,5 +280,23 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+    function increaseLikes(consoleId) {
+        var likesElement = document.getElementById('likeCount_' + consoleId);
+        var likeTextElement = document.getElementById('likeText_' + consoleId);
+
+        var currentLikes = parseInt(likesElement.innerHTML);
+        likesElement.innerHTML = currentLikes + 1;
+
+        if (currentLikes === 0) {
+            likeTextElement.innerHTML = "Like";
+        } else {
+            likeTextElement.innerHTML = "Likes";
+        }
+    }
+</script>
+
 </body>
 </html>
