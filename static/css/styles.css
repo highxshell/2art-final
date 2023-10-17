@@ -249,6 +249,19 @@ col p {
   animation-delay: 1.65s;
 }
 
+#hiddenDiv {
+  display: none;
+}
+
+#slider {
+  overflow: hidden;
+}
+
+#image-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
 /* KEYFRAMES ANIMATION  */
 @keyframes showRight {
   100% {
