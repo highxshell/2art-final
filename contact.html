@@ -114,25 +114,70 @@
               >
               <input class="form-control" type="file" id="formFile" />
             </div>
-            <a href="#" target="_blank" class="btn">Send</a>
+             <button class="btn" id="submitButton">Send</button>
           </div>
         </div>
       </div>
-      <div class="container text-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+      <button class="btn mt-5" id="showHiddenButton">
+          Click here to see popular questions.
+        </button>
+        <div id="hiddenDiv">
+          <p class="h4 mt-3">
+            1. Q: Do you sell gaming consoles and accessories? A: Yes, we offer
+            a wide range of gaming consoles like PlayStation, Xbox, and Nintendo
+            Switch, as well as accessories such as controllers, headsets, and
+            charging docks.
+          </p>
+          <p class="h4">
+            2. Q: Can I pre-order upcoming games at this store? A: Yes, you can
+            pre-order upcoming titles to secure your copy. We also offer
+            pre-order bonuses for certain games.
+          </p>
+          <p class="h4">
+            3. Q: Are there any discounts or loyalty programs for regular
+            customers? A: We have a loyalty program that offers discounts,
+            exclusive deals, and early access to sales for our regular
+            customers.
+          </p>
+        </div>
+      <div class="container d-flex justify-content-around" id="slider">
+        <div
+          class="row row-cols-4 row-cols-sm-4 row-cols-md-4"
+          id="image-container"
+        >
           <div class="col">
-            <img src="static\images\contact.jpg" class="img-fluid" alt="bg" />
+            <img
+              src="static\images\contact.jpg"
+              class="img-fluid slider-image"
+              alt="bg"
+            />
           </div>
           <div class="col">
-            <img src="static\images\contact1.jpg" class="img-fluid" alt="bg" />
+            <img
+              src="static\images\contact1.jpg"
+              class="img-fluid slider-image"
+              alt="bg"
+            />
           </div>
           <div class="col">
-            <img src="static\images\contact2.jpg" class="img-fluid" alt="bg" />
+            <img
+              src="static\images\contact2.jpg"
+              class="img-fluid slider-image"
+              alt="bg"
+            />
           </div>
           <div class="col">
-            <img src="static\images\contact3.jpg" class="img-fluid" alt="bg" />
+            <img
+              src="static\images\contact3.jpg"
+              class="img-fluid slider-image"
+              alt="bg"
+            />
           </div>
         </div>
+      </div>
+      <div class="buttons d-flex justify-content-around">
+        <button class="btn" id="prevButton">Previous</button>
+        <button class="btn" id="nextButton">Next</button>
       </div>
     </section>
 
@@ -156,5 +201,6 @@
         </div>
       </div>
     </footer>
+    <script src="static\js\aboutScript.js"></script>
   </body>
 </html>
