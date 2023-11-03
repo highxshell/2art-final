@@ -262,6 +262,10 @@ col p {
   transition: transform 0.5s ease;
 }
 
+.carousel-c {
+  background-color: #000000;
+}
+
 /* KEYFRAMES ANIMATION  */
 @keyframes showRight {
   100% {
