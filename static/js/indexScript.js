@@ -1,11 +1,11 @@
-document.getElementById("Register").addEventListener("click", function () {
-  const userInput = prompt("Enter your age:");
-  if (userInput > 13) {
-    alert("You can use our store.");
-  } else {
-    alert("You are too young to use our store.");
-  }
-});
+// document.getElementById("Register").addEventListener("click", function () {
+//   const userInput = prompt("Enter your age:");
+//   if (userInput > 13) {
+//     alert("You can use our store.");
+//   } else {
+//     alert("You are too young to use our store.");
+//   }
+// });
 
 document.getElementById("Register").onmouseover = function () {
   document.getElementById("Register").style.fontSize = "200%";
