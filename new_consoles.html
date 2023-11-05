@@ -97,7 +97,7 @@
                     </div>
                      <div class="card-footer">
        <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console1)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console1')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -121,7 +121,7 @@
                     </div>
                      <div class="card-footer">
           <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console2)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console2')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -146,7 +146,7 @@
                     </div>
                      <div class="card-footer">
            <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console3)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console3')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -174,7 +174,7 @@
                     </div>
                      <div class="card-footer">
            <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console4)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console4')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -197,7 +197,7 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console5)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console5')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -221,7 +221,7 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console6)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console6')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -249,7 +249,7 @@
                     </div>
                      <div class="card-footer">
           <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console7)">Add to Basket</button>
             <button class="btn btn-Light" onclick="increaseLikes('console7')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
 </button>
@@ -274,7 +274,7 @@
                     </div>
                      <div class="card-footer">
             <button class="btn btn-dark">Buy now</button>
-            <button class="btn btn-primary">Add to Basket</button>
+            <button class="btn btn-primary" onclick="addToCart(console8)">Add to Basket</button>
         
             <button class="btn btn-Light" onclick="increaseLikes('console8')">
     <img src="static2/images/heart.png" alt="Heart" style="width: 20px; height: 15px;">
@@ -287,6 +287,15 @@
             </div>
             <div class="col-md-4">
 
+                <div id="cart" style="position: fixed; top: 0; right: 0; padding: 10px; background-color: #fff; border: 2px solid #ccc;">
+        <h3>Shopping Basket</h3>
+        <ul id="cartItems">
+            
+        </ul>
+        <hr>
+        <p>Total: <span id="totalPrice">0 ₸</span></p>
+         <button class="btn btn-danger" onclick="clearCart()">Clear Basket</button>
+    </div>
            
     </main>
 
@@ -342,6 +351,95 @@
         
         setInterval(changeText, 2000);
     </script>
+
+    <script>
+       var shoppingCart = {
+    items: [],
+    total: 0,
+
+    addItem: function(item) {
+        this.items.push(item);
+        this.calculateTotal();
+        this.updateCartUI();
+    },
+
+    calculateTotal: function() {
+        this.total = this.items.reduce((acc, item) => acc + item.price, 0);
+    },
+
+    updateCartUI: function() {
+        var cartItemsElement = document.getElementById('cartItems');
+        var totalPriceElement = document.getElementById('totalPrice');
+
+        cartItemsElement.innerHTML = "";
+        this.items.forEach(item => {
+            var li = document.createElement('li');
+            li.textContent = item.name + ": " + item.price + " ₸";
+            cartItemsElement.appendChild(li);
+        });
+
+        totalPriceElement.textContent = this.total + " ₸";
+    },
+    clearCart: function() {
+        this.items = [];
+        this.total = 0;
+        this.updateCartUI();
+    }
+};
+
+var console1 = {
+    name: 'Sony PS 5',
+    price: 364990
+};
+
+var console2 = {
+    name: 'Xbox Series S',
+    price: 163900
+};
+
+var console3 = {
+    name: 'Xbox Series X',
+    price: 279900 
+};
+
+var console4 = {
+    name: 'Valve Steam',
+    price: 319899 
+};
+
+var console5 = {
+    name: 'Centechia X6',
+    price: 15000 
+};
+
+var console6 = {
+    name: 'MarCo X20',
+    price: 30000
+};
+
+var console7 = {
+    name: 'Sony PS4 Slim',
+    price: 221000
+};
+
+var console8 = {
+    name: 'ASUS ROG Ally',
+    price: 395000 
+};
+
+
+
+function clearCart() {
+    shoppingCart.clearCart();
+}
+
+function addToCart(console) {
+    shoppingCart.addItem(console);
+    shoppingCart.updateCartUI(); 
+}
+    </script>
+
+
 
 </body>
 </html>
