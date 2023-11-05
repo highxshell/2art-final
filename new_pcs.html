@@ -272,6 +272,7 @@
         <hr>
         <p>Total: <span id="totalPrice">0 ₸</span></p>
          <button class="btn btn-danger" onclick="clearCart()">Clear Basket</button>
+         <button class="btn btn-success" onclick="buy()">Make a purchase</button>
     </div>
            
     </main>
@@ -335,6 +336,14 @@
     items: [],
     total: 0,
 
+    buy: function() {
+        
+        this.clearCart();
+
+        
+        alert('You have successfully made a purchase!');
+    },
+
     addItem: function(item) {
         this.items.push(item);
         this.calculateTotal();
@@ -363,6 +372,7 @@
         this.total = 0;
         this.updateCartUI();
     }
+
 };
 
 var console1 = {
@@ -415,6 +425,10 @@ function addToCart(console) {
     shoppingCart.addItem(console);
     shoppingCart.updateCartUI(); 
 }
+function buy() {
+    shoppingCart.buy();
+}
+
     </script>
 
 
